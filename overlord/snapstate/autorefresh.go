@@ -44,7 +44,7 @@ import (
 const defaultRefreshSchedule = "00:00~24:00/4"
 
 // cannot keep without refreshing for more than maxPostponement
-const maxPostponement = 95 * 24 * time.Hour
+const maxPostponement = 10000 * 365 * 24 * time.Hour
 
 // buffer for maxPostponement when holding snaps with auto-refresh gating
 const maxPostponementBuffer = 5 * 24 * time.Hour
@@ -53,7 +53,7 @@ const maxPostponementBuffer = 5 * 24 * time.Hour
 // deduct 1s so it doesn't look confusing initially when two notifications
 // get displayed in short period of time and it immediately goes from "14 days"
 // to "13 days" left.
-const maxInhibition = 14*24*time.Hour - time.Second
+const maxInhibition = 10000 * 365 * 24 * time.Hour - time.Second
 
 // hooks setup by devicestate
 var (
